@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS bit_blog_db;
+
+CREATE DATABASE bit_blog_db;
