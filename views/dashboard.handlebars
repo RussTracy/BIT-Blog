@@ -1,9 +1,5 @@
 <section>
-
-
-    <p>
-        <button class="button" data-modal="modalOne">Add Post</button>
-    </p>
+    <button class="button" data-modal="modalOne">Add Post</button>
 
     <div id="modalOne" class="modal">
         <div class="modal-content card">
@@ -53,10 +49,11 @@
 
 {{#if posts.length}}
 <section>
+    <br />
     <h2>Your Posts</h2>
+    <hr />
     {{#each posts as |post|}}
     {{> post-info post}}
-    <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
     {{/each}}
 </section>
 {{/if}}

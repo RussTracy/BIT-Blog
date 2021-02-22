@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
-<body>
+<body onload="title()">
     <div class="wrapper">
         <header class="hero">
             <nav>
@@ -23,7 +23,7 @@
                     {{/if}}
                 </ul>
             </nav>
-            <h1 class="app-title"><i class="fas fa-robot"></i> BIT Blog</h1>
+            <h1 class="app-title" id="app-title"><i class="fas fa-robot"></i> BIT Blog</h1>
         </header>
         <main>
             {{{ body }}}
@@ -35,6 +35,18 @@
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     {{/if}}
+    <script>
+        function title() {
+            var location = window.location.href;
+            if (location.includes("dashboard")) {
+                document.getElementById("app-title").innerHTML = '<i class="fas fa-robot"></i> Your Dashboard';
+            }
+        }
+    </script>
+
+
+
+
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 <div class="login-wrapper">
-    <div class="card">
+    <div id="login" class="card">
         <div class="card-header">Login</div>
         <div class="card-body">
             <form class="login-form">
@@ -11,13 +11,14 @@
                     <input type="password" id="password-login" />
                     <label for="password-login">Password:</label>
                 </div>
-                <div>
+                <div class="login-buttons">
                     <button type="submit">Login</button>
+                    <button id="signup-link">Sign Up Instead</button>
                 </div>
             </form>
         </div>
     </div>
-    <div class="card">
+    <div id="signup" class="card">
         <div class="card-header">Signup</div>
         <div class="card-body">
             <form class="signup-form">
@@ -33,10 +34,12 @@
                     <input type="password" id="password-signup" />
                     <label for="password-signup">Password:</label>
                 </div>
-                <div>
+                <div class="login-buttons">
                     <button type="submit">Signup</button>
+                    <button id="login-link">Login Instead</button>
                 </div>
             </form>
+
         </div>
     </div>
 </div>
