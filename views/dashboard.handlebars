@@ -1,0 +1,64 @@
+<section>
+
+
+    <p>
+        <button class="button" data-modal="modalOne">Add Post</button>
+    </p>
+
+    <div id="modalOne" class="modal">
+        <div class="modal-content card">
+            <div class="card-header">New Post</div>
+            <div class="card-body">
+                <form class="new-post-form">
+                    <div>
+                        <label for="post-title">Title</label>
+                        <input type="text" id="post-title" name="post-title" />
+                    </div>
+                    <div>
+                        <label for="post-text">Text</label>
+                        <textarea id="post-text" name="post-text"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Create</button>
+                    <button type="reset" class="close">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let modalBtns = [...document.querySelectorAll(".button")];
+        modalBtns.forEach(function (btn) {
+            btn.onclick = function () {
+                let modal = btn.getAttribute('data-modal');
+                document.getElementById(modal)
+                    .style.display = "block";
+            }
+        });
+        let closeBtns = [...document.querySelectorAll(".close")];
+        closeBtns.forEach(function (btn) {
+            btn.onclick = function () {
+                let modal = btn.closest('.modal');
+                modal.style.display = "none";
+            }
+        });
+        window.onclick = function (event) {
+            if (event.target.className === "modal") {
+                event.target.style.display = "none";
+            }
+        }
+    </script>
+
+
+</section>
+
+{{#if posts.length}}
+<section>
+    <h2>Your Posts</h2>
+    {{#each posts as |post|}}
+    {{> post-info post}}
+    <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+    {{/each}}
+</section>
+{{/if}}
+
+<script src="/javascript/add-post.js"></script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIT Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="hero">
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    {{#if loggedIn}}
+                    <li><a href="/" id="logout">Logout</a></li>
+                    {{else}}
+                    <li><a href="/login">Login</a></li>
+                    {{/if}}
+                </ul>
+            </nav>
+            <h1 class="app-title"><i class="fas fa-robot"></i> BIT Blog</h1>
+        </header>
+        <main>
+            {{{ body }}}
+        </main>
+        <footer>
+            Thanks for visiting!
+        </footer>
+    </div>
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+</body>
+
+</html>
