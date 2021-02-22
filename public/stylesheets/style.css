@@ -84,6 +84,19 @@ form label {
   display: block;
 }
 
+#login {
+  display: inline;
+}
+
+#signup {
+  display: none;
+}
+
+.login-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* End Form Styles */
 
 .wrapper {
@@ -281,7 +294,7 @@ footer a {
   margin: 0 0 20px 0;
   border: 3px solid var(--dark);
   border-radius: var(--border-radius);
-  min-width: 40vw;
+  width: 100%;
 }
 
 .card-header {
