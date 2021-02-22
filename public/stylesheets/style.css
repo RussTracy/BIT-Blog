@@ -23,12 +23,7 @@ body, html {
   font-size: 16px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   margin: 0;
   color: var(--dark);
@@ -41,13 +36,12 @@ a {
   font-weight: bold;
   transition: color .1s;
 }
-.card-header a, .card-header h2{
-color: var(--primary);
-}
 
 a:hover {
   color: var(--accent);
 }
+
+/* Form Styles */
 
 button {
   background-color: var(--dark);
@@ -62,11 +56,6 @@ button {
 
 button:hover {
   background-color: var(--accent);
-}
-
-.post-list {
-  margin: 0;
-  padding: 0;
 }
 
 textarea, input {
@@ -87,13 +76,15 @@ textarea {
   min-height: 100px;
 }
 
-form > div {
+form>div {
   margin-bottom: 2%;
 }
 
 form label {
   display: block;
 }
+
+/* End Form Styles */
 
 .wrapper {
   width: 100%;
@@ -102,15 +93,6 @@ form label {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-}
-
-header {
-  border-bottom: 1px solid #ccc;
-  padding: 0 1%;
-}
-
-header h1 {
-  font-size: 1em;
 }
 
 main {
@@ -135,40 +117,57 @@ main {
   background-color: var(--dark);
   color: var(--primary);
 }
+
 .hero p {
   max-width: 75%;
+}
+
+/* Header Styles */
+
+header {
+  border-bottom: 1px solid #ccc;
+  padding: 0 1%;
 }
 
 header h1 {
   font-size: 1em;
 }
 
-header nav{
-     margin: 7px 0;
+header h1 {
+  font-size: 1em;
 }
+
+header nav {
+  margin: 7px 0;
+}
+
 header nav ul {
-     display: flex;
-     flex-wrap: wrap;
-     justify-content: flex-start;
-     align-items: center;
-     list-style-type: none;
-     margin-left: -50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  list-style-type: none;
+  margin-left: -50px;
 }
-header nav ul li a{
-     padding: 10px 15px;
-     font-weight: lighter;
-     font-size: 2vw;
-     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-     color: var(--primary-color);
-     text-decoration: none;
+
+header nav ul li a {
+  padding: 10px 15px;
+  font-weight: lighter;
+  font-size: 2vw;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: var(--primary-color);
+  text-decoration: none;
 }
+
 header nav ul li a:hover {
-     background: var(--primary-color);
-     color: var(--accent);
-     border-radius: 15px;
-     text-shadow: none;
-     text-decoration: underline;
-   }
+  background: var(--primary-color);
+  color: var(--accent);
+  border-radius: 15px;
+  text-shadow: none;
+  text-decoration: underline;
+}
+
+/* End Header Styles */
 
 .btn-no-style {
   background: none;
@@ -199,6 +198,11 @@ header nav ul li a:hover {
 .post {
   margin-bottom: 2%;
   line-height: 150%;
+}
+
+.post-list {
+  margin: 0;
+  padding: 0;
 }
 
 .post .title span {
@@ -236,9 +240,14 @@ header nav ul li a:hover {
   margin-bottom: 5%;
 }
 
+.login-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
+/* Footer Styles */
 
-   /* Footer Styles */
 footer {
   background-color: var(--dark);
   color: var(--primary);
@@ -248,27 +257,26 @@ footer {
   padding: 1%;
   font-size: 110%;
 }
-footer h2{
-     color: var(--secondary-color);
-     font-size: 30px;
-     margin: 0;
+
+footer h2 {
+  color: var(--secondary-color);
+  font-size: 30px;
+  margin: 0;
 }
-footer div{
-     line-height: 1.5;
-     text-align: right;
+
+footer div {
+  line-height: 1.5;
+  text-align: right;
 }
-footer a{
-     color: var(--secondary-color);
+
+footer a {
+  color: var(--secondary-color);
 }
+
 /* End Footer Styles */
 
-.login-wrapper{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
+/* Card Styles */
 
-/* CARDS */
 .card {
   margin: 0 0 20px 0;
   border: 3px solid var(--dark);
@@ -286,11 +294,12 @@ footer a{
   justify-content: space-between;
   align-items: center;
 }
-.card-header span{
+
+.card-header span {
   font-size: smaller;
 }
 
-.card-header i{
+.card-header i {
   float: right;
 }
 
@@ -298,53 +307,58 @@ footer a{
   padding: 2.5%;
 }
 
-/* ------------------- */
+.card-header a, .card-header h2 {
+  color: var(--primary);
+}
+
+/* End Card Styles */
+
+/* Modal Styles */
 
 .modal {
-        display: none;
-        position: fixed;
-        z-index: 8;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgb(0, 0, 0);
-        background-color: rgba(0, 0, 0, 0.4);
-      }
-      .modal-content {
-        margin: 150px auto;
-        border: 1px solid #2e2f3a;
-        width: 60%;
-        border-radius: var(--border-radius);
-      }
-     
-      .modal-content form {
-        padding: 25px;
-        box-shadow: 0 2px 5px #000000;
-        background: #eee;
-        border-radius: var(--border-radius);
-      }
-      button:hover {
-        background: #2371a0;
-      }
-      
-     
+  display: none;
+  position: fixed;
+  z-index: 8;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
 
-/* ------------------- */
+.modal-content {
+  margin: 150px auto;
+  border: 1px solid #2e2f3a;
+  width: 60%;
+  border-radius: var(--border-radius);
+}
+
+.modal-content form {
+  padding: 25px;
+  box-shadow: 0 2px 5px #000000;
+  background: #eee;
+  border-radius: var(--border-radius);
+}
+
+button:hover {
+  background: #2371a0;
+}
+
+/* End Modal Styles */
 
 @media screen and (max-width: 800px) {
-  header nav ul li a{
+  header nav ul li a {
     font-size: 2.5vw;
   }
 }
 
 @media screen and (max-width: 450px) {
-  header nav ul li a{
+  header nav ul li a {
     font-size: 4vw;
   }
-  .card{
+  .card {
     min-width: 100%;
   }
-
 }
