@@ -21,7 +21,7 @@ router.get('/:id', (req, res) => {
                 model: Post,
                 attributes: [
                     'id',
-                    'post_url',
+                    'post_text',
                     'title',
                     'created_at'
                 ],
@@ -54,8 +54,10 @@ router.post('/', withAuth, (req, res) => {
     if (req.session) {
         Comment.create({
             comment_text: req.body.comment_text,
-            user_id: req.session.user_id, // use the id from the session
-            post_id: req.body.post_id
+            post_id: req.body.post_id,
+            //user_id: req.body.user_id //Get user id from api post body
+            user_id: req.session.user_id // Get user id from session variables
+
         })
             .then(dbCommentData => res.json(dbCommentData))
             .catch(err => {
